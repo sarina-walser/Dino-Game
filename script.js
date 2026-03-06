@@ -20,7 +20,7 @@ function startScore() {
   }, 200); // Score alle 200ms hochzählen
 }
 
-// Verbesserung des Springverhaltens
+// Verbesserung des Springverhaltens:
 // Der Dino kann nur springen, wenn er sich nicht bereits in der Luft befindet.
 function jump() {
   if (isJumping || gameOver) return;
