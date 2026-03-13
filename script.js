@@ -6,7 +6,6 @@ let scoreValue = 0;
 let scoreInterval;
 let gameStarted = false;
 let gameOver = false;
-let isJumping = false;
 
 function startScore() {
   if (gameStarted) return;
@@ -20,20 +19,12 @@ function startScore() {
   }, 200); // Score alle 200ms hochzählen
 }
 
-// Verbesserung des Springverhaltens:
-// Der Dino kann nur springen, wenn er sich nicht bereits in der Luft befindet.
 function jump() {
-  if (isJumping || gameOver) return;
+  if (dino.classList.contains("jump-animation") || gameOver) return;
 
   startScore(); // Score startet beim ersten Jump
-
-  isJumping = true;
   dino.classList.add("jump-animation");
-
-  setTimeout(() => {
-    dino.classList.remove("jump-animation");
-    isJumping = false;
-  }, 500);
+  setTimeout(() => dino.classList.remove("jump-animation"), 500);
 }
 
 document.addEventListener("keydown", (event) => {
