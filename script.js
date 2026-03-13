@@ -34,8 +34,12 @@ document.addEventListener("keydown", (event) => {
 setInterval(() => {
   if (gameOver) return;
 
-  const dinoTop = parseInt(window.getComputedStyle(dino).getPropertyValue("top"));
-  const rockLeft = parseInt(window.getComputedStyle(rock).getPropertyValue("left"));
+  const dinoTop = parseInt(
+    window.getComputedStyle(dino).getPropertyValue("top"),
+  );
+  const rockLeft = parseInt(
+    window.getComputedStyle(rock).getPropertyValue("left"),
+  );
 
   // Game Over, wenn Dino nicht springt
   if (rockLeft < 50 && rockLeft > 0 && dinoTop > 150) {
